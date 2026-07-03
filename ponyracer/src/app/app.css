@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  align-items: flex-end;   /* align both columns to the top */
+  gap: 1rem;
+}
+
+.content ns-races {
+  flex: 0 0 33.333%;         /* 1/3 width, no grow/shrink */
+}
+
+.content ns-rider-popular {
+  flex: 1 1 auto;         /* 1/3 width, no grow/shrink */
+}

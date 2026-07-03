@@ -1,0 +1,29 @@
+<section class="races">
+  <h2 class="races-title">Upcoming Races</h2>
+
+  <div class="race-grid">
+    @for (race of races(); track race.name) {
+      <article class="race-card">
+        <header class="race-card__header">
+          <h3 class="race-card__name">{{ race.name }}</h3>
+          <span
+            class="race-card__badge"
+            [class.race-card__badge--single]="race.isSingleDay"
+            [class.race-card__badge--multi]="!race.isSingleDay"
+          >
+            {{ race.isSingleDay ? 'One day' : 'Multi-day' }}
+          </span>
+        </header>
+
+        <p class="race-card__date">
+          🗓 {{ race.timeStart | date:'EEE, MMM d, y' }}
+        </p>
+        <p class="race-card__time">
+          ⏱ {{ race.timeStart | date:'HH:mm' }}
+        </p>
+      </article>
+    } @empty {
+      <p class="races-empty">No races available</p>
+    }
+  </div>
+</section>

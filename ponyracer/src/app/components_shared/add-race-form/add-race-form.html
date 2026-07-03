@@ -1,0 +1,7 @@
+<form [formGroup]="applyForm" (submit)="submitForm()">
+  <label for="name">Name</label>
+  <input type="text" formControlName="name"/>
+  <label for="single">X</label>
+  <input type="radio" formControlName="isSingleDay"/>
+  <button type="submit">Submit</button>
+</form>

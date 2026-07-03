@@ -1,0 +1,10 @@
+<nav class="banner">
+  <span class="banner-brand">UCI Events</span>
+  <ul class="banner-links">
+    @for (item of bannerList; track item.url) {
+      <li>
+        <a [href]="item.url">{{ item.name }}</a>
+      </li>
+    }
+  </ul>
+</nav>

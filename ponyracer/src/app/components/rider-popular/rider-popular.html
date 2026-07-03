@@ -1,0 +1,15 @@
+<section class="popular">
+  <h2 class="popular__title">🔥 Popular Riders</h2>
+
+  <ol class="popular__list">
+    @for (rider of favouriteRiders; track rider.name; let i = $index) {
+      <li class="rider" [class.rider--top]="i < 3">
+        <span class="rider__rank">{{ i + 1 }}</span>
+        <span class="rider__name">{{ rider.name }}</span>
+        <span class="rider__clicks">{{ rider.click }}</span>
+      </li>
+    } @empty {
+      <li class="popular__empty">No riders yet</li>
+    }
+  </ol>
+</section>
